@@ -1,12 +1,12 @@
 - project:
-    name: "Jenkins-Job-Builder"
+    name: "Jenkins-Job-Builder-gh"
     branch: "master"
     jobs:
-      - "Jenkins-Job-Builder-{branch}"
+      - "Jenkins-Job-Builder-gh-{branch}"
 
 # A template is required to allow rpc_jobs/defaults.yml to be used.
 - job-template:
-    name: "Jenkins-Job-Builder-{branch}"
+    name: "Jenkins-Job-Builder-gh-{branch}"
     project-type: workflow
     description: Creates and updates jobs with Jenkins Job Builder.
     properties:
@@ -74,7 +74,7 @@
                                      --user $JENKINS_USER \
                                      --password $JENKINS_API_PASSWORD \
                                      --ignore-cache \
-                                   \$JJB_ARGS update ${{updateArgs}} \$jjb_paths $JOBS
+                                   \$JJB_ARGS test ${{updateArgs}} \$jjb_paths $JOBS
 
                       """
                     }}
